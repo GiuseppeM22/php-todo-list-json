@@ -6,15 +6,29 @@ const { createApp } = Vue
         message: 'Hello Vue!',
         lista : 'api.php',
         todo : [],
+        newTask: ""
       }
     },
     methods: {
         chiamata(){
             axios.get( this.lista ).then((risp) => {
-                const risposta = risp.data
+                let risposta = risp.data
                 this.todo = risposta
-                console.log(this.todo)
+                console.log("cavolo")
               }); 
+        },
+        addNewTask() {
+            const data = { newTask: this.newTask };
+
+            axios.post(this.lista, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((risp) => {
+                console.log("Dati ricevuti: ", risp.data);
+                let risposta = risp.data
+                this.todo = risposta
+                this.newTask = "";
+                console.log("questo: ", this.todo);
+            });
         }
     }
   }).mount('#app')

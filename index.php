@@ -11,8 +11,11 @@
 <body>
     <div id="app">
         <button @click="chiamata()">cliccami per generare la lista</button>
-        <div v-for="lista in todo" class="lista">
+        <input v-mode="newTask" type="text" name="newTask" id="" placeholder="inserisci nuova task">
+        <button @click="addNewTask">aggiungi</button>
+        <div v-for="(lista, i) in todo" class="lista">
             <li>{{lista}}</li>
+
         </div>
     </div>
     <script src="./vue.js"></script>
