@@ -21,6 +21,23 @@ const { createApp } = Vue
                 newTask : this.newTask 
             };
 
+            this.genCall(data)
+        },
+        deleteAll(){
+            const data = { 
+                deleteAll : true
+            };  
+
+            this.genCall(data)
+        },
+        deleteSingol(i){
+            const data = {
+                deleteSingol : i
+            }
+
+            this.genCall(data)
+        },
+        genCall(data){
             axios.post(this.lista, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then((risp) => {
