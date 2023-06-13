@@ -29,8 +29,14 @@ if( isset($_POST['newTask']) ) {
         array_splice($todoListDati, $indice, 1);
         file_put_contents("dati.json", json_encode($todoListDati) );
     
+    }   else if( isset($_POST['edittext'] )) {
+
+        $indice = $_POST['indice'];
+        $textEdit = $_POST['edittext'];
+        $todoListDati[$indice]["list"] = $textEdit;
+
+        file_put_contents("dati.json", json_encode($todoListDati) );
     }
-    
 
 $todoList = json_encode($todoListDati);
 

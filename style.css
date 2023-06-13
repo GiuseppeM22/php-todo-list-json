@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #222;
+    margin: 10px;
+    color: white;
+}
+
+.lista{
+    display: flex;
+    align-items: center;
+}

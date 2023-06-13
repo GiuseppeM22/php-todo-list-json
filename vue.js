@@ -6,7 +6,8 @@ const { createApp } = Vue
         message: 'Hello Vue!',
         lista : 'api.php',
         todo : [],
-        newTask: ""
+        newTask: "",
+        editing: ""
       }
     },
     methods: {
@@ -37,6 +38,14 @@ const { createApp } = Vue
 
             this.genCall(data)
         },
+        editItem(i){
+            const data = {
+                edittext : this.editing, 
+                indice : i
+            }
+
+            this.genCall(data)
+        },
         genCall(data){
             axios.post(this.lista, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
@@ -47,5 +56,8 @@ const { createApp } = Vue
                 console.log("questo: ", risp.data);
             });
         }
+    },
+    mounted(){
+        this.chiamata()
     }
   }).mount('#app')
