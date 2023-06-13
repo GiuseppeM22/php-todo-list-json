@@ -1,7 +1,1 @@
-[
- "mare",
- "mare",
- "mare",
- "mare",
- "mare"
-  ]
+[{"list":"andare al mare","status":true},{"list":"fare la spesa","status":true},{"list":"lavatrice","status":true},{"list":"palestra","status":true},{"list":"cena","status":true},{"list":"cinema","status":true},{"list":"andare in piscina","status":true}]

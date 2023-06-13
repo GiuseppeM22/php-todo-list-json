@@ -7,7 +7,14 @@ $todoListDati = json_decode($todoList, true);
 
 if( isset($_POST['newTask']) ) {
 
-    $todoListDati[] = $_POST['newTask'];
+    $object = $_POST['newTask'];
+
+    $newTask = array (
+        "list" => $object,
+        "status" => true
+    );
+
+    $todoListDati[] = $newTask;
     file_put_contents("dati.json", json_encode($todoListDati) );
 }
 
